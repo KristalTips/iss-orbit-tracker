@@ -1,0 +1,197 @@
+/* body */
+body {
+  color: white;
+  background-image: url("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjNzdmY1Z3lmZXl6enA3Mmozemxya3h1Y3g5bGNkMGU2MHRlMnBpdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iicDrNGWxHmDrIni6j/giphy.gif");
+  background-size: cover;
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+}
+
+#main-logo {
+  width: 100px;
+}
+
+.btn {
+  padding: 6px 12px;
+  background: red;
+  border: none;
+  font-family: "Orbitron", sans-serif;
+  font-weight: bold;
+}
+
+.underline {
+  border-bottom: 5px solid red;
+}
+
+.orbit {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 1px dashed white;
+  border-radius: 50%;
+  animation: spin 10s linear infinite;
+}
+
+.iss {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ISS orbit tracker panel */
+.iss-panel {
+  margin: 30px auto;
+  padding: 16px;
+  max-width: 380px;
+  border: 2px solid rgba(255, 255, 255, 0.65);
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.iss-panel h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+.iss-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+  line-height: 1.6;
+}
+
+.iss-panel li {
+  text-align: left;
+  margin: 6px 0;
+}
+
+.iss-status {
+  margin: 10px 0;
+  font-weight: bold;
+  color: #ffe46b;
+}
+
+.iss-status.success {
+  color: #6efb92;
+}
+
+.iss-status.error {
+  color: #ff7f7f;
+}
+
+.iss-note {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #ccc;
+}
+
+.orbit-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 24px auto;
+  width: 100%;
+  padding: 12px;
+}
+
+.orbit-board {
+  position: relative;
+  width: 320px;
+  height: 320px;
+}
+
+.orbit-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px dashed rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+
+.earth {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 96px;
+  height: 96px;
+  margin-left: -48px;
+  margin-top: -48px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 30%,
+    #62b0ff 0%,
+    #1f5fb4 50%,
+    #0c3f85 100%
+  );
+  box-shadow:
+    inset 0 0 14px rgba(0, 0, 0, 0.35),
+    0 0 20px rgba(34, 150, 255, 0.75);
+}
+
+.earth::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-image:
+    radial-gradient(
+      circle at 35% 25%,
+      rgba(255, 255, 255, 0.25),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 70% 45%,
+      rgba(255, 255, 255, 0.2),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 42% 70%,
+      rgba(255, 255, 255, 0.18),
+      transparent 26%
+    );
+  opacity: 0.75;
+  transform: translateX(2px) translateY(-2px) rotate(14deg);
+}
+
+.earth::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 80% 20%,
+    rgba(255, 255, 255, 0.35),
+    transparent 45%
+  );
+  opacity: 0.5;
+}
+
+.iss-dot {
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #fff;
+  border-radius: 9999px;
+  box-shadow: 0 0 10px 2px white;
+  border: 2px solid #4ccaef;
+  left: 50%;
+  top: 50%;
+  transform-origin: center left;
+}
+
+.orbit-label {
+  margin-top: 10px;
+  color: #ddd;
+  font-size: 0.85rem;
+}
